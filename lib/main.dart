@@ -13,76 +13,29 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        systemOverlayStyle:
-            const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-        backgroundColor: Colors.blue,
-        title: const Text('Hello World'),
-      ),
-      body: Column (
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                  height: 100,
-                  child: const Center(
-                    child: Text('Hello World'),
-                  ),
+            appBar: AppBar(
+              systemOverlayStyle: const SystemUiOverlayStyle(
+                  statusBarColor: Colors.transparent),
+              backgroundColor: Colors.redAccent,
+              title: const Text('Share'),
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.share),
+                  onPressed: () {},
+                )
+              ],
+            ),
+            body: Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/background.jpg'),
+                      fit: BoxFit.cover)),
+              child: const Center(
+
+                child: Text('Hello World',
+                  style: TextStyle(backgroundColor: Colors.grey),
                 ),
               ),
-              Expanded(
-                child: Container(
-                  color: Colors.red,
-                  height: 100,
-                  child: const Center(
-                    child: Text('Hello World'),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Row(
-
-            children: [
-             Expanded(
-               child: SizedBox(
-                  height: 100,
-                 child: Row (
-                   children: [
-                     Expanded(
-                       child: Column (
-                           children: const [
-                             Expanded(
-                                 child:  Center (
-                                   child: Text('Hello World'),
-
-                                 )
-                             )
-                           ]
-                       ),
-                     ),
-                     Expanded(
-                       child: Column (
-                           children: const [
-                             Expanded(
-                               child:  Center (
-                                  child: Text('Hello World'),
-
-                               )
-                             )
-                           ]
-                       ),
-                     ),
-                   ]
-                 )
-               )
-             )
-            ],
-          ),
-        ],
-      )
-    ));
+            )));
   }
 }
