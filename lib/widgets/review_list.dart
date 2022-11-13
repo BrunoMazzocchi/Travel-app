@@ -1,4 +1,4 @@
-import 'package:favorite_places/views/review.dart';
+import 'package:favorite_places/widgets/review.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'description_place.dart';
@@ -8,11 +8,6 @@ class ReviewList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var descriptionDummy =
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget aliquet nibh praesent tristique magna sit amet purus gravida. \n\nIn iaculis nunc sed augue lacus viverra vitae congue. Eget duis at tellus at. Nisi vitae suscipit tellus mauris. Varius morbi enim nunc faucibus. Adipiscing at in tellus integer feugiat scelerisque varius morbi. Tellus id interdum velit laoreet id donec. ";
-    var titleDummy = "Bahamas";
-    var stars = 2;
-
     return SingleChildScrollView(
         child: Container(
       margin: const EdgeInsets.only(bottom: 20.0),
