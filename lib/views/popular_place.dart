@@ -16,25 +16,19 @@ class PopularPlace extends StatelessWidget {
     var titleDummy = "Bahamas";
     var stars = 2;
 
-    SystemChrome.setSystemUIOverlayStyle(
-        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
-    return MaterialApp(
-        home: Scaffold(
-// Permite que el texto description se oculte bajo el gradiente
-      body: Stack(children: [
-        ListView(
-          children: [
-            DescriptionPlace(
-              namePlace: titleDummy,
-              stars: stars,
-              descriptionPlace: descriptionDummy,
+    return Stack(children: [
+            ListView(
+              children: [
+                DescriptionPlace(
+                  namePlace: titleDummy,
+                  stars: stars,
+                  descriptionPlace: descriptionDummy,
+                ),
+                const ReviewList(),
+              ],
             ),
-            const ReviewList(),
-          ],
-        ),
-        const HeaderAppBar(),
-      ]),
-    ));
+            const HeaderAppBar(),
+          ]);
   }
 }
