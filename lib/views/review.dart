@@ -23,11 +23,7 @@ class Review extends StatelessWidget {
         top: 2.0,
         right: 3.0,
       ),
-      child: const Icon(
-        Icons.star,
-        color: Color(0xFFf2C611),
-        size: 10.0
-      ),
+      child: const Icon(Icons.star, color: Color(0xFFf2C611), size: 10.0),
     );
 
     final starInComment = Row(
@@ -72,24 +68,20 @@ class Review extends StatelessWidget {
       ],
     );
 
-
-
-    final userComment =
-        Container(
-          margin: const EdgeInsets.only(
-            left: 20.0,
-          ),
-          child: Text(
-            comment,
-            textAlign: TextAlign.left,
-            style: const TextStyle(
-              fontFamily: "Lato",
-              fontSize: 13.0,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-        );
-
+    final userComment = Container(
+      margin: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Text(
+        comment,
+        textAlign: TextAlign.left,
+        style: const TextStyle(
+          fontFamily: "Lato",
+          fontSize: 13.0,
+          fontWeight: FontWeight.w900,
+        ),
+      ),
+    );
 
     final userDetails = Column(
       // Para centrar
@@ -112,7 +104,10 @@ class Review extends StatelessWidget {
       ),
     );
     return Row(
-      children: [photo, userDetails],
+      children: [
+        photo,
+        userDetails,
+      ],
     );
   }
 }

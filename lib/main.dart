@@ -1,4 +1,5 @@
 import 'package:favorite_places/views/description_place.dart';
+import 'package:favorite_places/views/gradient_back.dart';
 import 'package:favorite_places/views/review_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,32 +18,22 @@ class MyApp extends StatelessWidget {
     var titleDummy = "Bahamas";
     var stars = 2;
 
-    var pathImage = "assets/images/avatar.jpg";
-    var name = "Master Chetos";
-    var comments = "There is an amazing place in Sri Lanka";
-
-    var details = "1 review 5 photos";
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(
-              systemOverlayStyle: const SystemUiOverlayStyle(
-                  statusBarColor: Colors.transparent),
-              backgroundColor: Colors.blue,
-              title: const Text('Description places'),
+      // Permite que el texto description se oculte bajo el gradiente
+      body: Stack(children: [
+        ListView(
+          children: [
+            DescriptionPlace(
+              namePlace: titleDummy,
+              stars: stars,
+              descriptionPlace: descriptionDummy,
             ),
-            body: SingleChildScrollView(
-              child: Container(
-                child: Column(
-                  children: [
-                    DescriptionPlace(
-                      namePlace: titleDummy,
-                      stars: stars,
-                      descriptionPlace: descriptionDummy,
-                    ),
-                    const ReviewList(),
-                  ],
-                ),
-              ),
-            )));
+            const ReviewList(),
+          ],
+        ),
+        const GradientBack(title: 'Popular',),
+      ]),
+    ));
   }
 }
