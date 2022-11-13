@@ -1,8 +1,6 @@
 import 'package:favorite_places/widgets/review.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'description_place.dart';
-
 class ReviewList extends StatelessWidget {
   const ReviewList({Key? key}) : super(key: key);
 
@@ -10,8 +8,22 @@ class ReviewList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Container(
-      margin: const EdgeInsets.only(bottom: 20.0),
-      child: Column(children: const [
+      margin: const EdgeInsets.only(
+        bottom: 20.0,
+        top: 20.0,
+        left: 20,
+      ),
+      child:
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
+        Text(
+          "All Reviews",
+          style: TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.normal,
+            fontFamily: "Lato",
+          ),
+          textAlign: TextAlign.left,
+        ),
         Review(
             pathImage: "assets/images/avatar.jpg",
             name: "Master Chetos",
