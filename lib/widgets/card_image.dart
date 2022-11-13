@@ -1,3 +1,4 @@
+import 'package:favorite_places/widgets/floating_action_button_green_like.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -35,6 +36,12 @@ class CardImage extends StatelessWidget {
       ),
     );
 
-    return card;
+    return Stack(
+      alignment: const Alignment(0.9, 1.1),
+      children: <Widget>[
+        card,
+        const FloatingLikeButton(),
+      ],
+    );
   }
 }
