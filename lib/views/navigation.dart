@@ -11,21 +11,25 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
+
+  int _currentIndex = 0;
+
+  // Asigna el estado  de la barra de navegación
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    int _currentIndex = 0;
     final List<Widget> widgetsChildren = [
-      const Profile(),
       const AllPlaces(),
+      const Profile(),
       const PopularPlace(),
+
     ];
 
-    // Asigna el estado  de la barra de navegación
-    void onTabTapped(int index) {
-      setState(() {
-        _currentIndex = index;
-      });
-    }
+
 
     return Scaffold(
       body: widgetsChildren[_currentIndex],
