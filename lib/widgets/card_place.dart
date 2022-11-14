@@ -2,8 +2,6 @@ import 'package:favorite_places/views/popular_place.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/routes.dart';
-
 class CardPlace extends StatelessWidget {
   final String name;
   final String description;
@@ -26,8 +24,9 @@ class CardPlace extends StatelessWidget {
         ),
         child: InkWell(
           onTap: () {
-            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
-               const  PopularPlace()), (Route<dynamic> route) => false);
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const PopularPlace()),
+                (Route<dynamic> route) => false);
           },
           child: Row(
             children: [

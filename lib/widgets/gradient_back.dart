@@ -11,7 +11,6 @@ class GradientBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var title = "Popular";
     return Container(
       height: 250.0,
       decoration: const BoxDecoration(

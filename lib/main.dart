@@ -5,7 +5,16 @@ import 'package:flutter/services.dart';
 
 import 'constants/routes.dart';
 
-void main() => runApp(const MyApp());
+void main () {
+  runApp(
+     MaterialApp(
+      home: const Navigation(),
+      routes: {
+        placeRoute: (context) => const PopularPlace(),
+      },
+    ),
+  );
+}
 
 
 class MyApp extends StatelessWidget {
@@ -14,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+
       home: Navigation()
     );
   }

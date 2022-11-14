@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../widgets/description_place.dart';
 import '../widgets/header_app_bar.dart';
@@ -16,19 +14,21 @@ class PopularPlace extends StatelessWidget {
     var titleDummy = "Bahamas";
     var stars = 2;
 
+    return MaterialApp(
+        color: Colors.transparent, // <-- Add this, if needed
 
-    return Stack(children: [
-            ListView(
-              children: [
-                DescriptionPlace(
-                  namePlace: titleDummy,
-                  stars: stars,
-                  descriptionPlace: descriptionDummy,
-                ),
-                const ReviewList(),
-              ],
-            ),
-            const HeaderAppBar(),
-          ]);
+        home: Stack(children: [
+          ListView(
+            children: [
+              DescriptionPlace(
+                namePlace: titleDummy,
+                stars: stars,
+                descriptionPlace: descriptionDummy,
+              ),
+              const ReviewList(),
+            ],
+          ),
+          const HeaderAppBar(),
+        ]));
   }
 }

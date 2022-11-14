@@ -32,6 +32,7 @@ class _FloatingLikeButtonState extends State<FloatingLikeButton> {
       backgroundColor: const Color(0xFF11DA53),
       mini: true,
       tooltip: "Like",
+      heroTag: null,
       child:  icon,
       onPressed: () {
         onPressedFav();

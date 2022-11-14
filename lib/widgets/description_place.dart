@@ -88,6 +88,7 @@ class DescriptionPlace extends StatelessWidget {
         const ButtonPurple(
            buttonText: "Navigate",
 
+
         )
       ],
     );
