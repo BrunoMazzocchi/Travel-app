@@ -21,10 +21,10 @@ class AllPlaces extends StatelessWidget {
           alignment: AlignmentDirectional.topStart,
 
           children: [
-            const GradientBack(title: "Places"),
+            const GradientBack(title: "Places", gradientHeight: 200,),
             Container(
-              margin: const EdgeInsets.only(top: 250.0),
-              height: queryData.size.height - 315,
+              margin: const EdgeInsets.only(top: 100.0),
+              height: queryData.size.height - 156,
               width: 600,
               child: ListView(
                 children: [
