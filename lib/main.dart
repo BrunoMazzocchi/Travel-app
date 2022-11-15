@@ -5,9 +5,9 @@ import 'package:flutter/services.dart';
 
 import 'constants/routes.dart';
 
-void main () {
+void main() {
   runApp(
-     MaterialApp(
+    MaterialApp(
       home: const Navigation(),
       routes: {
         placeRoute: (context) => const PopularPlace(),
@@ -16,17 +16,12 @@ void main () {
   );
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
 
-      home: Navigation()
-    );
+    return const MaterialApp(home: Navigation());
   }
 }
-
-

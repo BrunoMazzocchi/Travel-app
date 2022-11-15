@@ -1,19 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class GradientBack extends StatelessWidget {
-  final String title;
-  final double gradientHeight;
-  const GradientBack({
-    Key? key,
-    required this.gradientHeight,
-    required this.title,
-  }) : super(key: key);
+class GradietBackProfile extends StatelessWidget {
+  const GradietBackProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: gradientHeight,
+      height: 300.0,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -29,9 +22,9 @@ class GradientBack extends StatelessWidget {
         ),
       ),
       alignment: const Alignment(-0.9, -0.6),
-      child: Text(
-        title,
-        style: const TextStyle(
+      child: const Text(
+        "Profile",
+        style: TextStyle(
           color: Colors.white,
           fontSize: 30.0,
           fontFamily: "Lato",

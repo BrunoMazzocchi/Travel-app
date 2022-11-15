@@ -2,6 +2,7 @@ import 'package:favorite_places/views/popular_place.dart';
 import 'package:favorite_places/views/view_all_places.dart';
 import 'package:favorite_places/views/view_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
@@ -11,23 +12,25 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
+  int _currentIndex = 0;
+
+  // Asigna el estado  de la barra de navegación
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    int _currentIndex = 0;
     final List<Widget> widgetsChildren = [
-      const Profile(),
       const AllPlaces(),
-      const PopularPlace(),
+      const Profile(),
     ];
 
-    // Asigna el estado  de la barra de navegación
-    void onTabTapped(int index) {
-      setState(() {
-        _currentIndex = index;
-      });
-    }
+
 
     return Scaffold(
+
       body: widgetsChildren[_currentIndex],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
@@ -38,8 +41,6 @@ class _NavigationState extends State<Navigation> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: "Favorite"),
           ],
           onTap: onTabTapped,
           currentIndex: _currentIndex,

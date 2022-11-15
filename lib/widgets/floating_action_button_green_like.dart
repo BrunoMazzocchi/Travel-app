@@ -22,21 +22,17 @@ class _FloatingLikeButtonState extends State<FloatingLikeButton> {
     Icon icon = const Icon(Icons.favorite_border);
     Icon likedIcon = const Icon(Icons.favorite);
 
-    if(_isFav) {
+    if (_isFav) {
       icon = likedIcon;
     }
-
-
 
     return FloatingActionButton(
       backgroundColor: const Color(0xFF11DA53),
       mini: true,
       tooltip: "Like",
       heroTag: null,
-      child:  icon,
-      onPressed: () {
-        onPressedFav();
-      },
+      onPressed: onPressedFav,
+      child: icon,
     );
   }
 }
