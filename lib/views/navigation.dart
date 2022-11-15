@@ -12,7 +12,6 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-
   int _currentIndex = 0;
 
   // Asigna el estado  de la barra de navegación
