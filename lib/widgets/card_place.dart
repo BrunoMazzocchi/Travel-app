@@ -1,5 +1,4 @@
 import 'package:favorite_places/views/popular_place.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardPlace extends StatelessWidget {
@@ -17,16 +16,28 @@ class CardPlace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        height: 140,
         margin: const EdgeInsets.only(
           top: 20.0,
           left: 20.0,
           right: 20.0,
         ),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          shape: BoxShape.rectangle,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black38,
+              blurRadius: 15.0,
+              offset: Offset(0.0, 7.0),
+            )
+          ],
+        ),
         child: InkWell(
           onTap: () {
-            Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => const PopularPlace()),
-                (Route<dynamic> route) => false);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const PopularPlace()));
           },
           child: Row(
             children: [
@@ -34,9 +45,7 @@ class CardPlace extends StatelessWidget {
                 height: 80.0,
               ),
               Container(
-                margin: const EdgeInsets.only(
-                  right: 10,
-                ),
+                margin: const EdgeInsets.only(right: 10, left: 10),
                 height: 120.0,
                 width: 120.0,
                 decoration: BoxDecoration(
@@ -51,17 +60,22 @@ class CardPlace extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        name,
-                        style: const TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.left,
-                      )
-                    ],
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 10,
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          name,
+                          style: const TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        )
+                      ],
+                    ),
                   ),
                   Row(children: [
                     SizedBox(
