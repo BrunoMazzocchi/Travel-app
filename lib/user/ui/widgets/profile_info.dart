@@ -1,4 +1,4 @@
-import 'package:favorite_places/widgets/profile_button_action.dart';
+import 'package:favorite_places/user/ui/widgets/profile_button_action.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

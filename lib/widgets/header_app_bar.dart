@@ -1,5 +1,5 @@
-import 'package:favorite_places/views/navigation.dart';
-import 'package:favorite_places/widgets/card_image_list.dart';
+import 'package:favorite_places/navigation.dart';
+import 'package:favorite_places/place/ui/widgets/card_image_list.dart';
 import 'package:favorite_places/widgets/gradient_back.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:favorite_places/widgets/floating_action_button_green_like.dart';
+import 'package:favorite_places/place/ui/widgets/floating_action_button_green_like.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

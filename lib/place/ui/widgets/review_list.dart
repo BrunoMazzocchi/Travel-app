@@ -1,4 +1,4 @@
-import 'package:favorite_places/widgets/review.dart';
+import 'package:favorite_places/place/ui/widgets/review.dart';
 import 'package:flutter/cupertino.dart';
 
 class ReviewList extends StatelessWidget {

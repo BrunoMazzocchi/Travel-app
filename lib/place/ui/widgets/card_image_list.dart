@@ -1,4 +1,4 @@
-import 'package:favorite_places/widgets/card_image.dart';
+import 'package:favorite_places/place/ui/widgets/card_image.dart';
 import 'package:flutter/cupertino.dart';
 
 class CardImageList extends StatelessWidget {

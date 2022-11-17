@@ -1,5 +1,4 @@
-import 'package:favorite_places/widgets/profile_card_list.dart';
-import 'package:favorite_places/widgets/profile_image_card.dart';
+import 'package:favorite_places/user/ui/widgets/profile_card_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

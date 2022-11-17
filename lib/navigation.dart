@@ -1,6 +1,7 @@
-import 'package:favorite_places/views/popular_place.dart';
-import 'package:favorite_places/views/view_all_places.dart';
-import 'package:favorite_places/views/view_profile.dart';
+import 'package:favorite_places/place/ui/views/view_popular_place.dart';
+import 'package:favorite_places/place/ui/views/view_all_places.dart';
+import 'package:favorite_places/user/ui/views/view_profile.dart';
+import 'package:favorite_places/user/ui/views/view_signin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -23,6 +24,7 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> widgetsChildren = [
+      const SignInView(),
       const AllPlaces(),
       const Profile(),
     ];

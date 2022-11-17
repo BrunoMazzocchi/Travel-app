@@ -1,4 +1,4 @@
-import 'package:favorite_places/widgets/profile_image_card.dart';
+import 'package:favorite_places/user/ui/widgets/profile_image_card.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProfileCardList extends StatelessWidget {

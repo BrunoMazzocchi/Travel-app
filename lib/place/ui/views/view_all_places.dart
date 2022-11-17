@@ -1,8 +1,8 @@
-import 'package:favorite_places/widgets/main_place_list.dart';
+import 'package:favorite_places/place/ui/widgets/main_place_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../widgets/gradient_back.dart';
+import '../../../widgets/gradient_back.dart';
 
 class AllPlaces extends StatelessWidget {
   const AllPlaces({Key? key}) : super(key: key);
