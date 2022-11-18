@@ -1,5 +1,7 @@
+import 'package:favorite_places/user/bloc/bloc_user.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class ProfileActionButton extends StatefulWidget {
   const ProfileActionButton({Key? key}) : super(key: key);
@@ -9,6 +11,8 @@ class ProfileActionButton extends StatefulWidget {
 }
 
 class _ProfileActionButtonState extends State<ProfileActionButton> {
+  late UserBloc userBloc;
+
   bool bookMark = false;
   bool tv = false;
   bool add = false;
@@ -39,14 +43,11 @@ class _ProfileActionButtonState extends State<ProfileActionButton> {
     });
   }
 
-  onPersonPressed(){
-    setState(() {
-      person = !person;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+
+    userBloc = UserBloc();
+
     Icon isNotBookMark = Icon(
       Icons.bookmark_outline,
       color: Colors.purple.shade300,
@@ -92,7 +93,7 @@ class _ProfileActionButtonState extends State<ProfileActionButton> {
     );
 
     Icon isNotPerson = Icon(
-      Icons.person_outline,
+      Icons.logout_outlined,
       color: Colors.purple.shade300,
     );
 
@@ -134,7 +135,7 @@ class _ProfileActionButtonState extends State<ProfileActionButton> {
               child: isNotMail,
             ),
             FloatingActionButton(
-              onPressed: onPersonPressed,
+              onPressed: ()=> userBloc.signOut(),
               backgroundColor: Colors.white,
               mini: true,
               child: isNotPerson
