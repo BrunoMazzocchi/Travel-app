@@ -24,7 +24,6 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> widgetsChildren = [
-      const SignInView(),
       const AllPlaces(),
       const Profile(),
     ];
@@ -32,7 +31,6 @@ class _NavigationState extends State<Navigation> {
 
 
     return Scaffold(
-
       body: widgetsChildren[_currentIndex],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
