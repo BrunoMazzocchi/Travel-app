@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '361832596646',
     projectId: 'travelplaces-5fd09',
     storageBucket: 'travelplaces-5fd09.appspot.com',
-    iosClientId: '361832596646-acjsfeltr08knnau729hiaja1p4nogep.apps.googleusercontent.com',
+    iosClientId:
+        '361832596646-acjsfeltr08knnau729hiaja1p4nogep.apps.googleusercontent.com',
     iosBundleId: 'com.example.favoritePlaces',
   );
 }

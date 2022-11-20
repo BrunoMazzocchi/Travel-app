@@ -1,5 +1,6 @@
 import 'package:favorite_places/user/ui/widgets/profile_button_action.dart';
 import 'package:flutter/material.dart';
+
 import '../../models/user.dart';
 
 class ProfileInformation extends StatefulWidget {
@@ -28,7 +29,7 @@ class _ProfileInformationState extends State<ProfileInformation> {
         shape: BoxShape.circle,
         image: DecorationImage(
           fit: BoxFit.cover,
-          image:NetworkImage(widget.user.photoUrl),
+          image: NetworkImage(widget.user.photoUrl),
         ),
         border: Border.all(
           color: Colors.white,

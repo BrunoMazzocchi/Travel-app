@@ -29,7 +29,7 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    final star_half = Container(
+/*    final starHalf = Container(
       margin: const EdgeInsets.only(
         top: 323.0,
         right: 3.0,
@@ -38,7 +38,7 @@ class DescriptionPlace extends StatelessWidget {
         Icons.star_half,
         color: Color(0xFFf2C611),
       ),
-    );
+    );*/
     final description = Container(
         margin: const EdgeInsets.only(
           top: 20.0,
@@ -86,9 +86,7 @@ class DescriptionPlace extends StatelessWidget {
         titleStars,
         description,
         const ButtonPurple(
-           buttonText: "Navigate",
-
-
+          buttonText: "Navigate",
         )
       ],
     );

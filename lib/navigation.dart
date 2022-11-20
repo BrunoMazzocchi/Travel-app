@@ -1,9 +1,6 @@
-import 'package:favorite_places/place/ui/views/view_popular_place.dart';
 import 'package:favorite_places/place/ui/views/view_all_places.dart';
 import 'package:favorite_places/user/ui/views/view_profile.dart';
-import 'package:favorite_places/user/ui/views/view_signin.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
@@ -21,14 +18,13 @@ class _NavigationState extends State<Navigation> {
       _currentIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> widgetsChildren = [
       const AllPlaces(),
       const Profile(),
     ];
-
-
 
     return Scaffold(
       body: widgetsChildren[_currentIndex],

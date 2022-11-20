@@ -1,8 +1,6 @@
 import 'package:favorite_places/user/bloc/bloc_user.dart';
 import 'package:favorite_places/user/ui/widgets/profile_card_list.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 import '../../models/user.dart';
 import '../widgets/gradient_back_profile.dart';
@@ -13,7 +11,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UserBloc userBloc  = UserBloc();
+    UserBloc userBloc = UserBloc();
     Widget showProfileData(AsyncSnapshot snapshot) {
       if (!snapshot.hasData || snapshot.hasError) {
         return Container(
@@ -30,16 +28,19 @@ class Profile extends StatelessWidget {
           name: snapshot.data.displayName,
           email: snapshot.data.email,
           photoUrl: snapshot.data.photoURL,
+          myPlaces: [],
+          uid: '',
+          myLikedPlaces: [],
         );
 
         return Column(children: [
           Stack(
-            alignment: Alignment.topCenter,
+            alignment: AlignmentDirectional.topStart,
             children: [
               Stack(
                 alignment: AlignmentDirectional.center,
                 children: [
-                  const GradietBackProfile(),
+                  const GradientBackProfile(),
                   ProfileInformation(
                     user: user,
                   ),
@@ -57,22 +58,15 @@ class Profile extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
-              return const CircularProgressIndicator();
-              break;
             case ConnectionState.waiting:
               return const CircularProgressIndicator();
-              break;
             case ConnectionState.active:
-              return showProfileData (snapshot);
-              break;
+              return showProfileData(snapshot);
             case ConnectionState.done:
-              return showProfileData (snapshot);
-              break;
+              return showProfileData(snapshot);
           }
         });
 
-
     return data;
   }
-
 }

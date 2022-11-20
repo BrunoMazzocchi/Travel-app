@@ -1,4 +1,3 @@
-import 'package:favorite_places/navigation.dart';
 import 'package:favorite_places/place/ui/views/view_popular_place.dart';
 import 'package:favorite_places/user/ui/views/view_signin.dart';
 import 'package:firebase_core/firebase_core.dart';

@@ -1,13 +1,11 @@
 import 'package:favorite_places/user/bloc/bloc_user.dart';
+import 'package:favorite_places/user/models/user.dart' as model;
 import 'package:favorite_places/widgets/green_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 import '../../../navigation.dart';
-import '../../../place/ui/views/view_all_places.dart';
 import '../../../widgets/gradient_back.dart';
 
 class SignInView extends StatefulWidget {
@@ -18,7 +16,7 @@ class SignInView extends StatefulWidget {
 }
 
 class _SignInViewState extends State<SignInView> {
-   late UserBloc userBloc;
+  late UserBloc userBloc;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +47,16 @@ class _SignInViewState extends State<SignInView> {
               width: 300,
               text: "Login with Gmail",
               onPressed: () {
-                userBloc.signIn().then((user) => print({user?.displayName}));
+                userBloc
+                    .signIn()
+                    .then((User? user) => userBloc.updateUserData(model.User(
+                          uid: user!.uid,
+                          myLikedPlaces: [],
+                          myPlaces: [],
+                          name: user.displayName.toString(),
+                          email: user.email.toString(),
+                          photoUrl: user.photoURL.toString(),
+                        )));
               },
             )
           ],

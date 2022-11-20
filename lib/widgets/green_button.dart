@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class GreenButton extends StatefulWidget {
@@ -8,7 +7,8 @@ class GreenButton extends StatefulWidget {
 
   // Function que hace como parametro
   final VoidCallback onPressed;
-  const GreenButton({Key? key,
+  const GreenButton({
+    Key? key,
     required this.height,
     required this.width,
     required this.text,
@@ -20,12 +20,11 @@ class GreenButton extends StatefulWidget {
 }
 
 class _GreenButtonState extends State<GreenButton> {
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
       // Generic button
-      onTap: widget.onPressed ,
+      onTap: widget.onPressed,
       child: Container(
         margin: const EdgeInsets.only(
           top: 30,
@@ -37,15 +36,11 @@ class _GreenButtonState extends State<GreenButton> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           gradient: const LinearGradient(
-            colors: [
-              Color(0xFFa7ff84),
-              Color(0xFF1cbb78)
-            ],
-            begin: FractionalOffset(0.2, 0.0),
-            end: FractionalOffset(1.0, 0.6),
-            stops: [0.0, 0.6],
-            tileMode: TileMode.clamp
-          ),
+              colors: [Color(0xFFa7ff84), Color(0xFF1cbb78)],
+              begin: FractionalOffset(0.2, 0.0),
+              end: FractionalOffset(1.0, 0.6),
+              stops: [0.0, 0.6],
+              tileMode: TileMode.clamp),
         ),
         child: Center(
           child: Text(
