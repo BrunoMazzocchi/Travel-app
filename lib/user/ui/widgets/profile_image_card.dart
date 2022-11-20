@@ -140,7 +140,7 @@ class ProfileImageCard extends StatelessWidget {
                 ],
               ),
             ),
-            const FloatingLikeButton(),
+             FloatingLikeButton(iconData: Icons.favorite, onPressed: (){},),
           ],
         )
       ],
