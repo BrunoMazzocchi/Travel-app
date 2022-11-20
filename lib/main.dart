@@ -14,11 +14,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
-    MaterialApp(
-      home: const SignInView(),
-      routes: {
-        placeRoute: (context) => const PopularPlace(),
-      },
+    const MaterialApp(
+      home: SignInView(),
     ),
   );
 }

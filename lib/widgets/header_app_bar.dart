@@ -17,7 +17,7 @@ class HeaderAppBar extends StatelessWidget {
       children: const [
         GradientBack(
           title: "Popular",
-          gradientHeight: 250.0,
+          gradientHeight: 300.0,
         ),
         CardImageList(),
       ],

@@ -22,7 +22,7 @@ class AllPlaces extends StatelessWidget {
           children: [
             const GradientBack(
               title: "Places",
-              gradientHeight: 200,
+              gradientHeight: 300,
             ),
             Container(
               margin: const EdgeInsets.only(top: 50.0),
