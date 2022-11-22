@@ -16,7 +16,7 @@ class ButtonPurple extends StatelessWidget {
         margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
         child: InkWell(
             onTap: () {
-             onPressed;
+             onPressed();
             },
             child: Container(
               height: 50,

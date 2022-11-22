@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:favorite_places/place/ui/views/view_add_place.dart';
 import 'package:favorite_places/user/bloc/bloc_user.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-
-import '../../../place/ui/views/view_popular_place.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfileActionButton extends StatefulWidget {
   const ProfileActionButton({Key? key}) : super(key: key);
@@ -15,10 +15,16 @@ class ProfileActionButton extends StatefulWidget {
 
 class _ProfileActionButtonState extends State<ProfileActionButton> {
   late UserBloc userBloc;
-  late File image;
   bool add = false;
   bool mail = false;
   bool person = false;
+
+  late String? pickedImage;
+
+  Future<String?> getImagePath() async {
+    XFile? image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    return image?.path;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +44,16 @@ class _ProfileActionButtonState extends State<ProfileActionButton> {
       color: Colors.purple.shade300,
     );
 
+    Future<File?> getImage() async {
+      FilePickerResult? result = await FilePicker.platform.pickFiles();
+      final String path;
+      final File pickedImage;
+      if (result != null) {
+        path = result.files.single.path!;
+        pickedImage = File(path);
+      }
+    }
+
     return Container(
         margin: const EdgeInsets.only(
           top: 10.0,
@@ -54,8 +70,16 @@ class _ProfileActionButtonState extends State<ProfileActionButton> {
             ),
             FloatingActionButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const AddPlaceView()));
+                ImagePicker()
+                    .pickImage(source: ImageSource.gallery, imageQuality: 50)
+                    .then((value) => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      AddPlaceView(image: File(value!.path))
+                              )).catchError((onError) => print(onError))
+                        });
               },
               backgroundColor: Colors.white,
               mini: false,

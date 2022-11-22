@@ -10,14 +10,11 @@ class FirebaseAuthAPI {
   Future<User?> signIn() async {
     GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
     GoogleSignInAuthentication? gSA = await googleSignInAccount?.authentication;
-
     final OAuthCredential credential = GoogleAuthProvider.credential(
         idToken: gSA?.idToken, accessToken: gSA?.accessToken);
-
     final UserCredential authResult =
         await _auth.signInWithCredential(credential);
     final User? user = authResult.user;
-
     return user;
   }
 
@@ -25,4 +22,5 @@ class FirebaseAuthAPI {
     await _auth.signOut();
     googleSignIn.signOut();
   }
+
 }
