@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../user/models/user.dart';
 
 class Place {
-  String uid;
+  String? uid;
   String name;
   String description;
   String uriImage;
@@ -13,11 +13,11 @@ class Place {
   Place(
  {
     Key? key,
-    required this.uid,
-    required this.name,
-    required this.description,
-    required this.uriImage,
-    required this.likes,
+     this.uid,
+     required this.name,
+     required this.description,
+     required this.uriImage,
+     required this.likes,
    this.userOwner,
   });
 }

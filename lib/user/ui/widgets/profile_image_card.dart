@@ -1,18 +1,15 @@
 import 'package:favorite_places/place/ui/widgets/floating_action_button_green_like.dart';
 import 'package:flutter/material.dart';
 
+import '../../../place/models/place.dart';
+
 class ProfileImageCard extends StatelessWidget {
-  final String thisPath;
-  final String name;
-  final String description;
-  final String steps;
+  final Place place;
+
 
   const ProfileImageCard({
     Key? key,
-    required this.thisPath,
-    required this.name,
-    required this.description,
-    required this.steps,
+    required this.place,
   }) : super(key: key);
 
   @override
@@ -29,7 +26,7 @@ class ProfileImageCard extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: Image.asset(thisPath).image,
+          image: NetworkImage(place.uriImage),
         ),
         borderRadius: const BorderRadius.all(Radius.circular(10.0)),
         shape: BoxShape.rectangle,
@@ -51,7 +48,7 @@ class ProfileImageCard extends StatelessWidget {
           bottom: 10,
         ),
         child: Text(
-          name,
+          place.name,
           textAlign: TextAlign.left,
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
@@ -73,7 +70,7 @@ class ProfileImageCard extends StatelessWidget {
           width: 260,
           child: Text(
             overflow: TextOverflow.ellipsis,
-            description,
+            place.description,
             maxLines: 3,
             style: const TextStyle(
               fontSize: 15.0,
@@ -91,12 +88,12 @@ class ProfileImageCard extends StatelessWidget {
         width: 260,
         margin: const EdgeInsets.only(top: 10, left: 20.0),
         child: Text(
-          steps,
+          "Likes: ${place.likes}",
           textAlign: TextAlign.left,
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontFamily: "Lato",
-            fontSize: 20.0,
+            fontSize: 15.0,
             fontWeight: FontWeight.w900,
             color: Colors.orange,
           ),

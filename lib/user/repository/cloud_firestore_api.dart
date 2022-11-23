@@ -1,8 +1,9 @@
 // Logica para guardar una entidad
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:favorite_places/user/ui/widgets/profile_image_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import '../../place/models/place.dart';
-import '../models/user.dart';
 
 class CloudFirestoreAPI {
   final String users = "users";
@@ -28,15 +29,38 @@ class CloudFirestoreAPI {
 
   Future<void> updatePlaceData(Place place) async {
     CollectionReference refPlaces = db.collection(places);
-      await refPlaces.add({
-        'name': place.name,
-        'description': place.description,
-        'likes': place.likes,
-        'userOwner': "$users/${auth.currentUser?.uid}",
-        'uriImage': place.uriImage,
+    var user = auth.currentUser;
+    await refPlaces.add({
+      'name': place.name,
+      'description': place.description,
+      'likes': place.likes,
+      'userOwner': db.doc("$users/${auth.currentUser?.uid}"),
+      'uriImage': place.uriImage,
+    }).then((DocumentReference dr) {
+      dr.get().then((DocumentSnapshot snapshot) {
+        snapshot.id;
+        DocumentReference refUsers = db.collection(users).doc(user?.uid);
+        refUsers.update({
+          'myPlaces': FieldValue.arrayUnion([db.doc("$places/${snapshot.id}")])
+        });
       });
+    });
+  }
+
+  // Obtiene los datos
+  List<ProfileImageCard> buildPlaces(
+      List<DocumentSnapshot> placesListSnapshot) {
+    List<ProfileImageCard> placeList = <ProfileImageCard>[];
+    for (var place in placesListSnapshot) {
+      placeList.add(ProfileImageCard(
+        place: Place(
+          name: place['name'],
+          description: place['description'],
+          uriImage: place['uriImage'],
+          likes: place['likes'],
+        ),
+      ));
+    }
+    return placeList;
   }
 }
-
-
-
