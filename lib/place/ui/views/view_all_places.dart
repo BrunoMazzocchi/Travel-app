@@ -1,8 +1,8 @@
-import 'package:favorite_places/widgets/main_place_list.dart';
+import 'package:favorite_places/place/ui/widgets/main_place_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../widgets/gradient_back.dart';
+import '../../../widgets/gradient_back.dart';
 
 class AllPlaces extends StatelessWidget {
   const AllPlaces({Key? key}) : super(key: key);
@@ -11,9 +11,8 @@ class AllPlaces extends StatelessWidget {
   Widget build(BuildContext context) {
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
         home: Scaffold(
             body: Column(
@@ -23,7 +22,7 @@ class AllPlaces extends StatelessWidget {
           children: [
             const GradientBack(
               title: "Places",
-              gradientHeight: 200,
+              gradientHeight: 300,
             ),
             Container(
               margin: const EdgeInsets.only(top: 50.0),

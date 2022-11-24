@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../widgets/header_app_bar.dart';
 import '../widgets/description_place.dart';
-import '../widgets/header_app_bar.dart';
 import '../widgets/review_list.dart';
 
 class PopularPlace extends StatelessWidget {
@@ -27,7 +27,6 @@ class PopularPlace extends StatelessWidget {
           ],
         ),
         const HeaderAppBar(),
-
       ]),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:favorite_places/views/popular_place.dart';
+import 'package:favorite_places/place/ui/views/view_popular_place.dart';
 import 'package:flutter/material.dart';
 
 class CardPlace extends StatelessWidget {
